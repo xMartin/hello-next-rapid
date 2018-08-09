@@ -30,7 +30,7 @@ npm run dev
 
 `pages/index.js`:
 
-```
+```jsx
 const Index = () => (
   <div>
     <p>Hello Next.js</p>
@@ -43,7 +43,7 @@ export default Index
 
 `pages/about.js`:
 
-```
+```jsx
 export default () => (
   <div>
     <p>This is the about page</p>
@@ -55,7 +55,7 @@ export default () => (
 
 `pages/index.js`:
 
-```
+```jsx
 import Link from 'next/link'
 
 const Index = () => (
@@ -72,7 +72,7 @@ const Index = () => (
 
 `components/Header.js`:
 
-```
+```jsx
 import Link from 'next/link'
 
 const linkStyle = {
@@ -95,7 +95,7 @@ export default Header
 
 `pages/about.js`:
 
-```
+```jsx
 import Header from '../components/Header'
 
 export default () => (
@@ -108,7 +108,7 @@ export default () => (
 
 `pages/index.js`:
 
-```
+```jsx
 import Link from 'next/link'
 import Header from '../components/Header'
 
@@ -142,7 +142,7 @@ npm install --save express isomorphic-unfetch
 
 `server.js`:
 
-```
+```javascript
 const express = require('express')
 const next = require('next')
 
@@ -171,7 +171,7 @@ app.prepare()
 
 `pages/index.js`:
 
-```
+```jsx
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
 
@@ -207,7 +207,7 @@ export default Index
 
 `pages/post.js`:
 
-```
+```jsx
 import fetch from 'isomorphic-unfetch'
 
 const Post =  (props) => (
