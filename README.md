@@ -96,10 +96,9 @@ app.prepare()
 .then(() => {
   const server = express()
 
-  server.get('/p/:id', (req, res) => {
-    const actualPage = '/post'
+  server.get('/show/:id', (req, res) => {
     const queryParams = { id: req.params.id }
-    app.render(req, res, actualPage, queryParams)
+    app.render(req, res, '/show', queryParams)
   })
 
   server.get('*', (req, res) => {
@@ -129,7 +128,7 @@ const Index = (props) => (
     <ul>
       {props.shows.map(({show}) => (
         <li key={show.id}>
-          <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
+          <Link as={`/show/${show.id}`} href={`/show?id=${show.id}`}>
             <a>{show.name}</a>
           </Link>
         </li>
@@ -152,12 +151,12 @@ Index.getInitialProps = async function() {
 export default Index
 ```
 
-`pages/post.js`:
+`pages/show.js`:
 
 ```jsx
 import fetch from 'isomorphic-unfetch'
 
-const Post =  (props) => (
+const Show = (props) => (
   <div>
     <h1>{props.show.name}</h1>
     <p>{props.show.summary.replace(/<[/]?p>/g, '')}</p>
@@ -165,7 +164,7 @@ const Post =  (props) => (
   </div>
 )
 
-Post.getInitialProps = async function (context) {
+Show.getInitialProps = async function (context) {
   const { id } = context.query
   const res = await fetch(`https://api.tvmaze.com/shows/${id}`)
   const show = await res.json()
@@ -175,6 +174,6 @@ Post.getInitialProps = async function (context) {
   return { show }
 }
 
-export default Post
+export default Show
 ```
 
