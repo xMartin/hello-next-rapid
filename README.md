@@ -68,64 +68,6 @@ const Index = () => (
 )
 ```
 
-## Shared header
-
-`components/Header.js`:
-
-```jsx
-import Link from 'next/link'
-
-const linkStyle = {
-  marginRight: 15
-}
-
-const Header = () => (
-  <div>
-    <Link href="/">
-      <a style={linkStyle}>Home</a>
-    </Link>
-    <Link href="/about">
-      <a style={linkStyle}>About</a>
-    </Link>
-  </div>
-)
-
-export default Header
-```
-
-`pages/about.js`:
-
-```jsx
-import Header from '../components/Header'
-
-export default () => (
-  <div>
-    <Header />
-    <p>This is the about page</p>
-  </div>
-)
-```
-
-`pages/index.js`:
-
-```jsx
-import Link from 'next/link'
-import Header from '../components/Header'
-
-const Index = () => (
-export default () => (
-  <div>
-    <Link href="/about">
-      <button>Go to About Page</button>
-    </Link>
-    <Header />
-    <p>Hello Next.js</p>
-  </div>
-)
-
-export default Index
-```
-
 ## URL Params and data fetching
 
 ```
@@ -183,7 +125,6 @@ import fetch from 'isomorphic-unfetch'
 
 const Index = (props) => (
   <div>
-    <Header />
     <h1>Batman TV Shows</h1>
     <ul>
       {props.shows.map(({show}) => (
@@ -218,7 +159,6 @@ import fetch from 'isomorphic-unfetch'
 
 const Post =  (props) => (
   <div>
-    <Header />
     <h1>{props.show.name}</h1>
     <p>{props.show.summary.replace(/<[/]?p>/g, '')}</p>
     <img src={props.show.image.medium}/>
