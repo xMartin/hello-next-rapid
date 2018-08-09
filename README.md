@@ -1,3 +1,18 @@
+# Isomorphic web apps in minutes with NextJS
+
+An interactive workshop (~1 hour)
+
+> Let's build a ReactJS web app with server-side rendering, routing and code splitting like it's PHP in the early 2000s, again. We'll just drop in some page component files and are ready to serve the first pages. Then we add a layout and some custom routes with params.
+
+Basic JavaScript and ReactJS skills will be helpful to follow but not necessary. Basic web development skills required.
+
+Please have NodeJS and NPM installed.
+
+## Intro
+
+ - [NextJS](https://nextjs.org/) vs [Create React App](https://github.com/facebook/create-react-app)
+ - Isomorphic web apps (aka universal)
+
 ## Setup
 
 To start, create a sample project by running the following commands:
@@ -177,3 +192,6 @@ Show.getInitialProps = async function (context) {
 export default Show
 ```
 
+## Outro
+
+ - [NuxtJS](https://nuxtjs.org/) - same but VueJS
